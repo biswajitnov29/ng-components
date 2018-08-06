@@ -1,0 +1,76 @@
+
+
+<div class="row">
+<div class="col">
+  <div class="file-drop-zone upload text-center" [ngClass]="{'upload-successful' : state == states.success,  'upload-failure' : (state == states.unsupported)}"
+  file-drop="fileupload" (drop)="dropFile($event)" (dragover)="allowDrop($event)">
+  <div *ngIf="state == states.noFile">
+    <span class="upload-icons upload-icon-{{state}}"></span>
+    <div *ngIf="state == states.unsupported">
+      <span class="upload-icon-5"></span>
+      <div>
+        <div class="unsupported-text">This Map Type is unsupported.</div>
+        <div class="unsupported-text">Please validate that the Map Type field in the template is set to [Capability Map / Digital Enterprise Map] and try
+          uploading again.</div>
+        <div class="remove-file">
+          To download the template
+          <span class="link cursor" omniture action-type="d" site-section="Map Actions" omniture-text="download-map-template">click here</span>
+          <!--download-link="api/Download/Template/{{ctrl.mapType}}" download-method="GET">-->
+        </div>
+      </div>
+    </div>
+
+    <div class="upload-icon-text">
+      <div *ngIf="state != states.success">
+        <div ng-bind="stateTexts[state]"></div>
+        <div *ngIf="state == states.error" class="browse-again">
+          Drag and drop the {{modalname}} Excel or
+
+          <label for="fileupload" class="primary-text-btn">
+            browse
+          </label>
+        </div>
+      </div>
+      <div *ngIf="state == states.success" omniture action-type="o" site-section="Map Actions" is-fileupload="true" omniture-text="Uploaded-map-successful"
+        class="success-message">
+        Done! The map was uploaded successfully!
+        <div class="remove-file">To remove the file
+          <span>click here</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="empty-file-zone-message" *ngIf="state != states.noFile">
+    <fa-icon [icon]="faUpload" size="lg"></fa-icon>
+    <div>
+      <div class="title">Add file with {{modalname}} to proceed</div>
+      <div class="subtitle">
+        Drag and drop the {{modalname}} Excel or
+        <label for="fileupload" class="primary-text-btn browserFile">browse</label>
+
+      </div>
+    </div>
+  </div>
+</div>
+<input type="file" id="fileupload" (change)="upload($event)" #fileToUpload/>
+{{fileToUpload.name}}
+<div class="upload-text progress-row row row-eq-height" *ngIf="state != states.noFile && state != states.wrongType">
+  <div class="col-xs-6">
+    <div *ngIf="state == states.error">
+      <span *ngFor="let errorMessage of errorMessages">
+        <span class="error-message" ng-bind="errorMessage"></span>
+      </span>
+    </div>
+    <div *ngIf="state == states.success">
+      <span *ngFor="let information of informationsMsg">
+        <span class="error-message" ng-bind="information"></span>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col">
+
+</div>
+</div>

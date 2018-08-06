@@ -1,0 +1,126 @@
+.download-section {
+    padding-bottom: 20px;
+  }
+
+  input[type=file]{
+    display: none;
+  }
+
+  .browserFile {
+    color: #02a2e1;
+    cursor: pointer;
+}
+  .file-drop-zone {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .success-message {
+      font-family: OpenSans-Semibold;
+      font-size: 16px;
+      color: #000000;
+      letter-spacing: 0;
+      margin-bottom: 12px;
+    }
+    .remove-file {
+      font-family: OpenSans;
+      font-size: 13px;
+      color: #000000;
+      letter-spacing: 0;
+      line-height: 20px;
+      margin-top: 12px;
+      span {
+        color: #00A3E0;
+        cursor: pointer;
+      }
+    }
+    .upload-icon-text {
+      padding: 34px;
+      .browse-again {
+        font-size: 13px;
+        margin-top: 12px;
+      }
+      .primary-text-btn {
+        color: #00a3e0;
+        cursor: pointer;
+      }
+      input {
+        display: none;
+      }
+    }
+    .upload-icon-3 {
+      background-color: transparent;
+      font-size: 96px;
+      color: #43B02A;
+      width: auto;
+      margin-bottom: 54px;
+      &:before {
+        margin-bottom: 34px;
+      }
+      &:after {
+        content: none;
+      }
+    }
+    .upload-icon-5 {
+      font-family: deloitte-special_font-v2 !important;
+      background-color: transparent;
+      font-size: 96px;
+      color: #eb8900;
+      width: auto;
+      margin-bottom: 54px;
+      &:before {
+        content: '\e9fc';
+      }
+    }
+    .unsupported-text {
+      font-family: OpenSans-Semibold;
+      font-size: 16px;
+      color: #000000;
+      letter-spacing: 0;
+    }
+    .empty-file-zone-message .title {
+      // font-size: 16px;
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .empty-file-zone-message .subtitle {
+      font-size: 10px;
+    }
+  }
+  .upload-successful {
+    background: #F3FAF2;
+    border-radius: 4px;
+  }
+  .upload-failure {
+    background: #fcf4e6;
+    border-radius: 4px;
+  }
+  
+  .error-message {
+    color: #F59104;
+    font-size: small;
+    width: 700px;
+  }
+  .download-icon {
+    font-size: 24px;
+    color: #00A3E0;
+    line-height: 20px;
+    float: left;
+    margin: 0 auto;
+  }
+  .map-type-selection {
+    font-family: OpenSans-Bold;
+    font-size: 32px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 32px;
+    text-align: center;
+    padding-top: 7px;
+    margin-bottom: 50px;
+  }
+  
+  
+  // @include opensans-semibold;
+  
+  // @include tick-icon;
